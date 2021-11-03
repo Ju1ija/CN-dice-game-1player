@@ -17,18 +17,21 @@ button.addEventListener("click", () => {
     let currentDice = diceList[diceId];
     let currentScore = diceId + 1;
 
-    finalScore += currentScore;
-    score.innerHTML = `${finalScore}`;
     dice.innerHTML = `${currentDice}`;
+    finalScore += currentScore;
 
     if (currentScore == 1) {
       player1.innerHTML = `you lost! ${icons[1]}`;
+      score.innerHTML = `${finalScore - 1}`;
       button.innerHTML = "start again";
       finalScore = 0;
-    } else if (finalScore > 25) {
+    } else if (finalScore >= 25) {
       player1.innerHTML = `you won! ${icons[0]}`;
+      score.innerHTML = `${finalScore}`;
       button.innerHTML = "start again";
       finalScore = 0;
+    } else {
+      score.innerHTML = `${finalScore}`;
     }
   }
 });
