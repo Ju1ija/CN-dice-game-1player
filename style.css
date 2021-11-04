@@ -52,3 +52,22 @@ button:active {
 #dice {
   font-size: 120px;
 }
+
+@media screen and (max-width: 500px), (max-height: 600px) {
+  div {
+    height: 120px;
+  }
+  button {
+    margin: 20px 0;
+  }
+  .size-1 {
+    font-size: 40px;
+    margin: 30px 20px 10px 20px;
+  }
+  .size-2 {
+    font-size: 30px;
+  }
+  #dice {
+    font-size: 90px;
+  }
+}
