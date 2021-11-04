@@ -12,24 +12,21 @@ button.addEventListener("click", () => {
     score.innerHTML = 0;
     dice.innerHTML = "";
     button.innerHTML = "roll the dice";
+    finalScore = 0;
   } else {
     let diceId = Math.floor(Math.random() * 6);
     let currentDice = diceList[diceId];
     let currentScore = diceId + 1;
-
     dice.innerHTML = `${currentDice}`;
     finalScore += currentScore;
-
     if (currentScore == 1) {
       player1.innerHTML = `you lost! ${icons[1]}`;
       score.innerHTML = `${finalScore - 1}`;
       button.innerHTML = "start again";
-      finalScore = 0;
     } else if (finalScore >= 25) {
       player1.innerHTML = `you won! ${icons[0]}`;
       score.innerHTML = `${finalScore}`;
       button.innerHTML = "start again";
-      finalScore = 0;
     } else {
       score.innerHTML = `${finalScore}`;
     }
